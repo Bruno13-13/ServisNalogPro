@@ -63,6 +63,8 @@
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\RadniNalog.cs" />
     <Compile Include="Models\StavkaNaloga.cs" />
+    <Compile Include="Models\VoditeljSustava.cs" />
+    <Compile Include="Models\Zaposlenik.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
