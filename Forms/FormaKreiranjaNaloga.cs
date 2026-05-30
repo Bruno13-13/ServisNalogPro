@@ -18,7 +18,7 @@ namespace ServisNalogPro.Forms
         public FormaKreiranjaNaloga()
         {
             InitializeComponent();
-            
+            UcitajZaposlenike();
         }
 
         private void btnSpremi_Click(object sender, EventArgs e)
@@ -40,6 +40,40 @@ namespace ServisNalogPro.Forms
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void UcitajZaposlenike()
+        {
+            cmbZaposlenik.DataSource = null; 
+            cmbZaposlenik.Items.Clear();
+
+            string connectionString = Program.ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "SELECT IdZaposlenika, Ime + ' ' + Prezime AS Ime FROM Zaposlenik";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    var lista = new List<dynamic>();
+
+                    while (reader.Read())
+                    {
+                        lista.Add(new
+                        {
+                            Text = reader["Ime"].ToString(),
+                            Value = reader["IdZaposlenika"]
+                        });
+                    }
+
+                    cmbZaposlenik.DataSource = lista;
+                    cmbZaposlenik.DisplayMember = "Text";
+                    cmbZaposlenik.ValueMember = "Value";
+                }
+            }
         }
     }
     
