@@ -38,7 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
-            this.cmbTehnicar = new System.Windows.Forms.ComboBox();
+            this.cmbZaposlenik = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.txtNapomena = new System.Windows.Forms.TextBox();
             this.btnSpremi = new System.Windows.Forms.Button();
@@ -136,17 +136,17 @@
             this.dtpDatum.Size = new System.Drawing.Size(200, 22);
             this.dtpDatum.TabIndex = 9;
             // 
-            // cmbTehnicar
+            // cmbZaposlenik
             // 
-            this.cmbTehnicar.FormattingEnabled = true;
-            this.cmbTehnicar.Items.AddRange(new object[] {
+            this.cmbZaposlenik.FormattingEnabled = true;
+            this.cmbZaposlenik.Items.AddRange(new object[] {
             "Ivan",
             "Marko",
             "Petar"});
-            this.cmbTehnicar.Location = new System.Drawing.Point(243, 241);
-            this.cmbTehnicar.Name = "cmbTehnicar";
-            this.cmbTehnicar.Size = new System.Drawing.Size(197, 24);
-            this.cmbTehnicar.TabIndex = 10;
+            this.cmbZaposlenik.Location = new System.Drawing.Point(243, 241);
+            this.cmbZaposlenik.Name = "cmbZaposlenik";
+            this.cmbZaposlenik.Size = new System.Drawing.Size(197, 24);
+            this.cmbZaposlenik.TabIndex = 10;
             // 
             // cmbStatus
             // 
@@ -196,7 +196,7 @@
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.txtNapomena);
             this.Controls.Add(this.cmbStatus);
-            this.Controls.Add(this.cmbTehnicar);
+            this.Controls.Add(this.cmbZaposlenik);
             this.Controls.Add(this.dtpDatum);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -226,7 +226,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpDatum;
-        private System.Windows.Forms.ComboBox cmbTehnicar;
+        private System.Windows.Forms.ComboBox cmbZaposlenik;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.TextBox txtNapomena;
         private System.Windows.Forms.Button btnSpremi;

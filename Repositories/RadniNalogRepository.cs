@@ -10,7 +10,7 @@ namespace ServisNalogPro.Repositories
 {
     public class RadniNalogRepository
     {
-        private string connectionString = "Server=31.147.206.65;Database=PI2526_bmatusic22_DB;User Id=PI2526_bmatusic22;Password=28gvnDyL<Hi6&Az;TrustServerCertificate=True;";
+        private string connectionString = "Server=31.147.206.65;Database=PI2526_bmatusic22_DB;User Id=PI2526_bmatusic22;Password=28gVnDyL<Hi6&A(z;TrustServerCertificate=True;";
         public void Spremi(RadniNalog nalog)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

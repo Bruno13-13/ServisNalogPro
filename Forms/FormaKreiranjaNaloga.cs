@@ -1,8 +1,10 @@
 ﻿using ServisNalogPro.Models;
+using ServisNalogPro.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,17 +18,11 @@ namespace ServisNalogPro.Forms
         public FormaKreiranjaNaloga()
         {
             InitializeComponent();
+            
         }
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            if (txtOpis.Text == "" || 
-                cmbStatus.Text == "" ||
-                cmbTehnicar.Text =="")
-            {
-                MessageBox.Show("Popunite sva polja!");
-                return;
-            }
             RadniNalog nalog = new RadniNalog();
 
             nalog.OpisKvara = txtOpis.Text;
@@ -34,9 +30,11 @@ namespace ServisNalogPro.Forms
             nalog.Status = cmbStatus.Text;
             nalog.IdZaposlenika = 1;
 
-            MessageBox.Show("Nalog kreiran)");
-                
-            
+            RadniNalogRepository repo = new RadniNalogRepository();
+            repo.Spremi(nalog);
+
+            MessageBox.Show("Nalog spremljen u bazu!");
+
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -44,4 +42,5 @@ namespace ServisNalogPro.Forms
             this.Close();
         }
     }
+    
 }
