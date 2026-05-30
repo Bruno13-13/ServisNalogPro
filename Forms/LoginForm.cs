@@ -48,5 +48,17 @@ namespace ServisNalogPro
                 MessageBox.Show("Pogrešni podaci.");
             }
         }
+
+        private void btnIzlaz_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show
+                ("Jeste li sigurni da želite izaći?",
+                "Izlaz",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+                {
+                Application.Exit();
+            }   
+        }
     }
 }
