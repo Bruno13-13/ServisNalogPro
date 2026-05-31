@@ -106,5 +106,17 @@ namespace ServisNalogPro.Forms
         {
             UcitajNaloge();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            UcitajNaloge();
+        }
+
+        private void PregledNaloga_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
+        
 }
