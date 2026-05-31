@@ -33,6 +33,7 @@
             this.btnObrisi = new System.Windows.Forms.Button();
             this.btnUredi = new System.Windows.Forms.Button();
             this.cmbFilterStatus = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(550, 487);
+            this.btnObrisi.Location = new System.Drawing.Point(571, 487);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(101, 38);
             this.btnObrisi.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             // btnUredi
             // 
-            this.btnUredi.Location = new System.Drawing.Point(407, 488);
+            this.btnUredi.Location = new System.Drawing.Point(452, 488);
             this.btnUredi.Name = "btnUredi";
             this.btnUredi.Size = new System.Drawing.Size(91, 38);
             this.btnUredi.TabIndex = 3;
@@ -80,17 +81,27 @@
             // cmbFilterStatus
             // 
             this.cmbFilterStatus.FormattingEnabled = true;
-            this.cmbFilterStatus.Location = new System.Drawing.Point(33, 495);
+            this.cmbFilterStatus.Location = new System.Drawing.Point(12, 507);
             this.cmbFilterStatus.Name = "cmbFilterStatus";
             this.cmbFilterStatus.Size = new System.Drawing.Size(280, 24);
             this.cmbFilterStatus.TabIndex = 4;
             this.cmbFilterStatus.SelectedIndexChanged += new System.EventHandler(this.cmbFilterStatus_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 488);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Filtriraj naloge";
             // 
             // PregledNaloga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 538);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbFilterStatus);
             this.Controls.Add(this.btnUredi);
             this.Controls.Add(this.btnObrisi);
@@ -101,6 +112,7 @@
             this.Load += new System.EventHandler(this.PregledNaloga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -111,5 +123,6 @@
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnUredi;
         private System.Windows.Forms.ComboBox cmbFilterStatus;
+        private System.Windows.Forms.Label label1;
     }
 }

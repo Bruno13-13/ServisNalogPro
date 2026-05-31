@@ -78,7 +78,7 @@
             // 
             // btnOdjava
             // 
-            this.btnOdjava.Location = new System.Drawing.Point(532, 385);
+            this.btnOdjava.Location = new System.Drawing.Point(550, 385);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(103, 43);
             this.btnOdjava.TabIndex = 4;
