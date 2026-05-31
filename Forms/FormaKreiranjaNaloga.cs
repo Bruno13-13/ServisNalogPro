@@ -28,7 +28,7 @@ namespace ServisNalogPro.Forms
             nalog.OpisKvara = txtOpis.Text;
             nalog.Datum = dtpDatum.Value;
             nalog.Status = cmbStatus.Text;
-            nalog.IdZaposlenika = 1;
+            nalog.IdZaposlenika = (int)cmbZaposlenik.SelectedValue;
 
             RadniNalogRepository repo = new RadniNalogRepository();
             repo.Spremi(nalog);
