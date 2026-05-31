@@ -31,5 +31,18 @@ namespace ServisNalogPro.Repositories
                 }
             }
         }
+        public void Obrisi(int idNaloga)
+        {
+            using (SqlConnection connection = new SqlConnection(Program.ConnectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM RadniNalog WHERE IdNaloga = @Id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", idNaloga);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

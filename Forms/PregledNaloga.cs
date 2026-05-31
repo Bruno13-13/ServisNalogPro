@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;    
-
+using System.Data.SqlClient;
+using ServisNalogPro.Repositories;
 namespace ServisNalogPro.Forms
 {
     public partial class PregledNaloga : Form
@@ -47,6 +47,19 @@ namespace ServisNalogPro.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdNaloga"].Value);
+                RadniNalogRepository repo = new RadniNalogRepository();
+                repo.Obrisi(id);
+                MessageBox.Show("Nalog obrisan!");
+                UcitajNaloge(); 
+            }
+           
         }
     }
 }
