@@ -40,6 +40,7 @@
             this.dtpDo = new System.Windows.Forms.DateTimePicker();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,11 +159,22 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(11, 440);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(105, 46);
+            this.btnPrint.TabIndex = 13;
+            this.btnPrint.Text = "Isprintaj statistiku";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // StatistikaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 508);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.dtpDo);
@@ -198,5 +210,6 @@
         private System.Windows.Forms.DateTimePicker dtpDo;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

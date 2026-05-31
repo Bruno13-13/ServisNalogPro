@@ -8,17 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing.Printing;
 
 namespace ServisNalogPro.Forms
 {
     public partial class StatistikaForm : Form
     {
+        PrintDocument printDocument = new PrintDocument();
         public StatistikaForm()
         {
             InitializeComponent();
-
-            
             UcitajStatistiku(new DateTime(1753, 1, 1), DateTime.Now);
+
+            printDocument.PrintPage += PrintDocument_PrintPage;
         }
 
         private void UcitajStatistiku(DateTime od, DateTime doDatuma)
@@ -114,6 +116,18 @@ namespace ServisNalogPro.Forms
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 
         { }
-        
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Bitmap bitmap = new Bitmap(this.Width, this.Height);
+            this.DrawToBitmap(bitmap, new Rectangle(0, 0, this.Width, this.Height));
+            e.Graphics.DrawImage(bitmap, 0, 0);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+            previewDialog.Document = printDocument;
+            previewDialog.ShowDialog();
+        }
     }
 }

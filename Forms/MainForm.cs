@@ -60,5 +60,10 @@ namespace ServisNalogPro
             PregledNaloga pregledNaloga = new PregledNaloga();
             pregledNaloga.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
