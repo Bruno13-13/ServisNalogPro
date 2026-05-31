@@ -53,5 +53,11 @@ namespace ServisNalogPro
                 this.Close();
             }
         }
+
+        private void btnPregledNaloga_Click(object sender, EventArgs e)
+        {
+            PregledNaloga pregledNaloga = new PregledNaloga();
+            pregledNaloga.Show();
+        }
     }
 }

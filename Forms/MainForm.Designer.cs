@@ -33,6 +33,7 @@
             this.btnStatistika = new System.Windows.Forms.Button();
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.btnOdjava = new System.Windows.Forms.Button();
+            this.btnPregledNaloga = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +58,7 @@
             // 
             // btnStatistika
             // 
-            this.btnStatistika.Location = new System.Drawing.Point(258, 216);
+            this.btnStatistika.Location = new System.Drawing.Point(258, 288);
             this.btnStatistika.Name = "btnStatistika";
             this.btnStatistika.Size = new System.Drawing.Size(155, 41);
             this.btnStatistika.TabIndex = 2;
@@ -85,11 +86,22 @@
             this.btnOdjava.UseVisualStyleBackColor = true;
             this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
+            // btnPregledNaloga
+            // 
+            this.btnPregledNaloga.Location = new System.Drawing.Point(258, 211);
+            this.btnPregledNaloga.Name = "btnPregledNaloga";
+            this.btnPregledNaloga.Size = new System.Drawing.Size(155, 42);
+            this.btnPregledNaloga.TabIndex = 5;
+            this.btnPregledNaloga.Text = "Pregled naloga";
+            this.btnPregledNaloga.UseVisualStyleBackColor = true;
+            this.btnPregledNaloga.Click += new System.EventHandler(this.btnPregledNaloga_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPregledNaloga);
             this.Controls.Add(this.btnOdjava);
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.btnStatistika);
@@ -109,5 +121,6 @@
         private System.Windows.Forms.Button btnStatistika;
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.Button btnOdjava;
+        private System.Windows.Forms.Button btnPregledNaloga;
     }
 }

@@ -32,7 +32,7 @@ namespace ServisNalogPro.Forms
                                 z.Ime + ' ' + z.Prezime AS Tehnicar
                                 FROM RadniNalog rn
                                 JOIN Zaposlenik z ON rn.IdZaposlenika = z.IdZaposlenika
-                                ORDER BY r.IdNaloga DESC";
+                                ORDER BY rn.IdNaloga DESC";
                 {
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
@@ -42,6 +42,11 @@ namespace ServisNalogPro.Forms
                 }
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
