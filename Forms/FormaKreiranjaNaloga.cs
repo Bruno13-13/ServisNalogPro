@@ -33,6 +33,24 @@ namespace ServisNalogPro.Forms
         }
         private void btnSpremi_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtOpis.Text))
+            {
+                MessageBox.Show("Unesite opis kvara!");
+                return;
+            }
+            if (cmbZaposlenik.SelectedIndex == -1)
+            {
+                MessageBox.Show("Odaberite zaposlenika!");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(cmbStatus.Text))
+            {
+                MessageBox.Show("Unesite status naloga!");
+                return;
+            }
+
+
             RadniNalog nalog = new RadniNalog();
 
             nalog.IdNaloga = idNaloga;
@@ -116,6 +134,11 @@ namespace ServisNalogPro.Forms
                     }
                 }
             }
+        }
+
+        private void FormaKreiranjaNaloga_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

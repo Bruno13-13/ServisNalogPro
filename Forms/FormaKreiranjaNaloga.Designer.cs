@@ -209,6 +209,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormaKreiranjaNaloga";
             this.Text = "FormaKreiranjaNaloga";
+            this.Load += new System.EventHandler(this.FormaKreiranjaNaloga_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
