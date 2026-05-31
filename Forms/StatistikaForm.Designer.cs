@@ -122,19 +122,20 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(822, 236);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dtpOd
             // 
             this.dtpOd.Location = new System.Drawing.Point(122, 71);
             this.dtpOd.Name = "dtpOd";
-            this.dtpOd.Size = new System.Drawing.Size(200, 22);
+            this.dtpOd.Size = new System.Drawing.Size(231, 22);
             this.dtpOd.TabIndex = 9;
             // 
             // dtpDo
             // 
             this.dtpDo.Location = new System.Drawing.Point(462, 67);
             this.dtpDo.Name = "dtpDo";
-            this.dtpDo.Size = new System.Drawing.Size(226, 22);
+            this.dtpDo.Size = new System.Drawing.Size(237, 22);
             this.dtpDo.TabIndex = 10;
             // 
             // btnFilter
@@ -145,6 +146,7 @@
             this.btnFilter.TabIndex = 11;
             this.btnFilter.Text = "Primjeni";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnClear
             // 
@@ -154,6 +156,7 @@
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Očisti";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // StatistikaForm
             // 
