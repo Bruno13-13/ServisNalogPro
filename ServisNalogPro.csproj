@@ -66,6 +66,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PregledNaloga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PregledNaloga.Designer.cs">
+      <DependentUpon>PregledNaloga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\RadniNalog.cs" />
     <Compile Include="Models\StavkaNaloga.cs" />
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PregledNaloga.resx">
+      <DependentUpon>PregledNaloga.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
