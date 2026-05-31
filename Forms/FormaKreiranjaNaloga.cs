@@ -49,8 +49,6 @@ namespace ServisNalogPro.Forms
                 MessageBox.Show("Unesite status naloga!");
                 return;
             }
-
-
             RadniNalog nalog = new RadniNalog();
 
             nalog.IdNaloga = idNaloga;
@@ -65,11 +63,19 @@ namespace ServisNalogPro.Forms
             {
                 repo.Spremi(nalog); 
                 MessageBox.Show("Nalog spremljen!");
+
+                txtOpis.Clear();
+                cmbStatus.SelectedIndex = -1;
+                cmbZaposlenik.SelectedIndex = -1;
             }
             else
             {
                 repo.Azuriraj(nalog); 
                 MessageBox.Show("Nalog ažuriran!");
+
+                txtOpis.Clear();
+                cmbStatus.SelectedIndex = -1;
+                cmbZaposlenik.SelectedIndex = -1;
             }
                 this.Close();
         }

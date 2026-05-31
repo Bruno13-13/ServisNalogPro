@@ -83,10 +83,16 @@ namespace ServisNalogPro.Forms
             if (dataGridView1.CurrentRow != null)
             {
                 int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdNaloga"].Value);
-                RadniNalogRepository repo = new RadniNalogRepository();
-                repo.Obrisi(id);
-                MessageBox.Show("Nalog obrisan!");
-                UcitajNaloge();
+                var result = MessageBox.Show("Jeste li sigurni da želite obrisati ovaj nalog?", "Potvrda brisanja",
+                    MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    RadniNalogRepository repo = new RadniNalogRepository();
+                    repo.Obrisi(id);
+                    MessageBox.Show("Nalog obrisan!");
+                    UcitajNaloge();
+                }
+
             }
 
         }
