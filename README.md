@@ -12,7 +12,8 @@ Aplikacija za upravljanje radnim nalozima razvijena u C# uz korištenje SQL Serv
 - Statistika naloga
 - Filtriranje statistike po datumu
 - Prikaz statistike po zaposleniku
-
+- Ispis statistike
+- 
 ## Prijava
 
 Za prijavu u aplikaciju koristite:
