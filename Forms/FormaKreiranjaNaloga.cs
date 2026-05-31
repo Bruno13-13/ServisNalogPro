@@ -53,6 +53,7 @@ namespace ServisNalogPro.Forms
                 repo.Azuriraj(nalog); 
                 MessageBox.Show("Nalog ažuriran!");
             }
+                this.Close();
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)

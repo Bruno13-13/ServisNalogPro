@@ -26,7 +26,8 @@ namespace ServisNalogPro
 
         private void btnStatistika_Click(object sender, EventArgs e)
         {
-
+            StatistikaForm form = new StatistikaForm();
+            form.ShowDialog();
         }
 
         private void btnIzlaz_Click(object sender, EventArgs e)
