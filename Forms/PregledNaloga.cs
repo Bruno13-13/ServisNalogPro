@@ -57,9 +57,20 @@ namespace ServisNalogPro.Forms
                 RadniNalogRepository repo = new RadniNalogRepository();
                 repo.Obrisi(id);
                 MessageBox.Show("Nalog obrisan!");
-                UcitajNaloge(); 
+                UcitajNaloge();
             }
-           
+
+        }
+
+        private void btnUredi_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdNaloga"].Value);
+                FormaKreiranjaNaloga forma = new FormaKreiranjaNaloga(id);
+                forma.ShowDialog();
+                UcitajNaloge();
+            }
         }
     }
 }

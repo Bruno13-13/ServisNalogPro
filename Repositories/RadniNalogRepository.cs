@@ -44,5 +44,27 @@ namespace ServisNalogPro.Repositories
                 }
             }
         }
+        public void Azuriraj(RadniNalog nalog)
+        {
+            using (SqlConnection connection = new SqlConnection(Program.ConnectionString))
+            {
+                connection.Open();
+                string query = @"UPDATE RadniNalog
+                                SET OpisKvara = @OpisKvara, 
+                                    Datum = @Datum, 
+                                    Status = @Status, 
+                                    IdZaposlenika = @IdZaposlenika
+                                WHERE IdNaloga = @IdNaloga";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@OpisKvara", nalog.OpisKvara);
+                    command.Parameters.AddWithValue("@Datum", nalog.Datum);
+                    command.Parameters.AddWithValue("@Status", nalog.Status);
+                    command.Parameters.AddWithValue("@IdZaposlenika", nalog.IdZaposlenika);
+                    command.Parameters.AddWithValue("@IdNaloga", nalog.IdNaloga);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

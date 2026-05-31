@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
+            this.btnUredi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,11 +66,22 @@
             this.btnObrisi.UseVisualStyleBackColor = true;
             this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
+            // btnUredi
+            // 
+            this.btnUredi.Location = new System.Drawing.Point(396, 409);
+            this.btnUredi.Name = "btnUredi";
+            this.btnUredi.Size = new System.Drawing.Size(91, 38);
+            this.btnUredi.TabIndex = 3;
+            this.btnUredi.Text = "Uredi nalog";
+            this.btnUredi.UseVisualStyleBackColor = true;
+            this.btnUredi.Click += new System.EventHandler(this.btnUredi_Click);
+            // 
             // PregledNaloga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUredi);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.dataGridView1);
@@ -85,5 +97,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.Button btnObrisi;
+        private System.Windows.Forms.Button btnUredi;
     }
 }
