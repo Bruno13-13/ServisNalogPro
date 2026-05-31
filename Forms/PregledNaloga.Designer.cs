@@ -32,6 +32,7 @@
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.btnUredi = new System.Windows.Forms.Button();
+            this.cmbFilterStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,11 +77,21 @@
             this.btnUredi.UseVisualStyleBackColor = true;
             this.btnUredi.Click += new System.EventHandler(this.btnUredi_Click);
             // 
+            // cmbFilterStatus
+            // 
+            this.cmbFilterStatus.FormattingEnabled = true;
+            this.cmbFilterStatus.Location = new System.Drawing.Point(12, 409);
+            this.cmbFilterStatus.Name = "cmbFilterStatus";
+            this.cmbFilterStatus.Size = new System.Drawing.Size(280, 24);
+            this.cmbFilterStatus.TabIndex = 4;
+            this.cmbFilterStatus.SelectedIndexChanged += new System.EventHandler(this.cmbFilterStatus_SelectedIndexChanged);
+            // 
             // PregledNaloga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbFilterStatus);
             this.Controls.Add(this.btnUredi);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnIzlaz);
@@ -98,5 +109,6 @@
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnUredi;
+        private System.Windows.Forms.ComboBox cmbFilterStatus;
     }
 }

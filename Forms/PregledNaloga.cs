@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using ServisNalogPro.Repositories;
+
 namespace ServisNalogPro.Forms
 {
     public partial class PregledNaloga : Form
@@ -16,6 +17,12 @@ namespace ServisNalogPro.Forms
         public PregledNaloga()
         {
             InitializeComponent();
+
+            cmbFilterStatus.Items.Add("Svi");
+            cmbFilterStatus.Items.Add("U tijeku");
+            cmbFilterStatus.Items.Add("Završeno");
+            cmbFilterStatus.SelectedIndex = 0;
+
             UcitajNaloge();
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -24,24 +31,46 @@ namespace ServisNalogPro.Forms
         private void UcitajNaloge()
         {
             string connectionString = Program.ConnectionString;
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                string query = @"SELECT rn.IdNaloga, rn.OpisKvara, rn.Datum, rn.Status, 
-                                z.Ime + ' ' + z.Prezime AS Tehnicar
-                                FROM RadniNalog rn
-                                JOIN Zaposlenik z ON rn.IdZaposlenika = z.IdZaposlenika
-                                ORDER BY rn.IdNaloga DESC";
+                string query;
+
+                if (cmbFilterStatus.Text == "U tijeku")
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    dataGridView1.DataSource = dt;
+                    query = @"SELECT rn.IdNaloga, rn.OpisKvara, rn.Datum, rn.Status, 
+                              z.Ime + ' ' + z.Prezime AS Tehnicar
+                              FROM RadniNalog rn
+                              JOIN Zaposlenik z ON rn.IdZaposlenika = z.IdZaposlenika
+                              WHERE rn.Status = 'U tijeku'
+                              ORDER BY rn.IdNaloga DESC";
                 }
-            }
+                else if (cmbFilterStatus.Text == "Završeno")
+                {
+                    query = @"SELECT rn.IdNaloga, rn.OpisKvara, rn.Datum, rn.Status, 
+                              z.Ime + ' ' + z.Prezime AS Tehnicar
+                              FROM RadniNalog rn
+                              JOIN Zaposlenik z ON rn.IdZaposlenika = z.IdZaposlenika
+                              WHERE rn.Status = 'Završeno'
+                              ORDER BY rn.IdNaloga DESC";
+                }
+                else
+                {
+                    query = @"SELECT rn.IdNaloga, rn.OpisKvara, rn.Datum, rn.Status, 
+                              z.Ime + ' ' + z.Prezime AS Tehnicar
+                              FROM RadniNalog rn
+                              JOIN Zaposlenik z ON rn.IdZaposlenika = z.IdZaposlenika
+                              ORDER BY rn.IdNaloga DESC";
+                }
 
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,6 +100,11 @@ namespace ServisNalogPro.Forms
                 forma.ShowDialog();
                 UcitajNaloge();
             }
+        }
+
+        private void cmbFilterStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UcitajNaloge();
         }
     }
 }
